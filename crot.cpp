@@ -4,6 +4,7 @@
 #include <raylib.h>
 #define WINDOW_HEIGHT 800.0
 #define WINDOW_WIDTH 800.0
+#define LINE_THICKNESS 5
 
 double degreeToRad(double x){
   return x * (M_PI/180);
@@ -25,8 +26,8 @@ public:
   void gameUI(){
     BeginDrawing();
     ClearBackground(BLACK);
-    DrawCircle(400, 400, radius, RED);
-    DrawCircle(400, 400, radius - 5, BLACK);
+    DrawCircle(WINDOW_WIDTH/2, WINDOW_HEIGHT/2, radius, RED);
+    DrawCircle(WINDOW_WIDTH/2, WINDOW_HEIGHT/2, radius - LINE_THICKNESS, BLACK);
     DrawCircle(ballX, ballY, 20, BLUE);
     DrawText("Scroll the mouse to change the speed", 200, 700, 20, RAYWHITE);
     EndDrawing();
